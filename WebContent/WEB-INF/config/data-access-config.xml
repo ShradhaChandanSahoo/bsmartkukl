@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           ">
+
+	<tx:annotation-driven />
+	
+	 <!-- Drives transactions using local JPA APIs  -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	<!-- <tx:annotation-driven transaction-manager="transactionManager1"/> -->
+	<bean id="transactionManager1" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory1" />
+	</bean>
+	<bean id="transactionManager2" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory2" />
+	</bean>
+	<bean id="transactionManager3" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory3" />
+	</bean>
+	
+	<bean id="transactionManager4" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory4" />
+		<qualifier value="txManagerChhetra"/>
+	</bean>
+	
+	<bean id="transactionManager5" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory5" />
+	</bean>
+	
+	<bean id="transactionManager6" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory6" />
+		
+	</bean>
+	
+	<bean id="transactionManager7" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory7" />
+		
+	</bean>
+	
+	<bean id="transactionManager8" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory8" />
+		
+	</bean>
+	
+	
+	<bean id="transactionManager9" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory9" />
+	</bean>
+	
+	<bean id="transactionManager10" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory10" />
+	</bean>
+	
+	<bean id="transactionManager11" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory11" />
+		
+	</bean>
+	
+	
+	
+	<bean id="propertyConfigurer"	class="org.jasypt.spring.properties.EncryptablePropertyPlaceholderConfigurer">
+		<constructor-arg ref="configurationEncryptor" />
+		
+		<property name="locations">
+            <list>
+                <value>classpath:configuration.properties</value>
+            </list>
+        </property>
+		<property name="placeholderPrefix" value="${" />
+		<property name="ignoreResourceNotFound" value="false" />
+		<property name="searchSystemEnvironment" value="true" />
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+	</bean>
+
+	<bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+		<property name="config" ref="environmentVariablesConfiguration" />
+	</bean>
+
+	<bean id="environmentVariablesConfiguration"
+		class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+		<property name="algorithm" value="PBEWithMD5AndDES" />
+		<property name="password" value="bcits" />
+	</bean>
+		
+	<!-- Creates a EntityManagerFactory for use with the Hibernate JPA provider and a simple in-memory data source populated with test data -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitName" value="defaultPersistenceUnit" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	<bean id="entityManagerFactory1" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource1" />
+		<property name="persistenceUnitName" value="TRIPUR_1115" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	<bean id="entityManagerFactory2" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource2" />
+		<property name="persistenceUnitName" value="BANESH_1112" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	<bean id="entityManagerFactory3" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource3" />
+		<property name="persistenceUnitName" value="TESTLOC_2222" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory4" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource4" />
+		<property name="persistenceUnitName" value="LALITPUR_1118" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory5" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource5" />
+		<property name="persistenceUnitName" value="BHAKTAPUR_1116" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory6" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource6" />
+		<property name="persistenceUnitName" value="CHHETRA_1114" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory7" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource7" />
+		<property name="persistenceUnitName" value="MAHAR_1111" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory8" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource8" />
+		<property name="persistenceUnitName" value="THIMI_1117" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory9" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource9" />
+		<property name="persistenceUnitName" value="KIRTIPUR_1119" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory10" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource10" />
+		<property name="persistenceUnitName" value="MAHAN_1110" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory11" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource11" />
+		<property name="persistenceUnitName" value="KAMALADI_1113" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username}" />
+		<property name="password" value="${datasource.password}" />
+	 
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username1}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ <bean id="dataSource2" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username2}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ <bean id="dataSource3" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username3}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource4" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username4}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource5" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username5}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource6" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username6}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+  <bean id="dataSource7" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username7}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+  <bean id="dataSource8" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username8}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource9" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username9}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource10" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username10}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ <bean id="dataSource11" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	 	<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username11}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="acquireIncrement" value="1" />
+		<property name="acquireRetryAttempts" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxPoolSize" value="1000" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="1000" />
+		<property name="maxStatementsPerConnection" value="10" />
+		<property name="statementCacheNumDeferredCloseThreads" value="1"/>
+		<property name="numHelperThreads" value="5" />
+		<property name="testConnectionOnCheckin" value="true" />	
+
+ </bean>
+ 
+ 
+	
+</beans>

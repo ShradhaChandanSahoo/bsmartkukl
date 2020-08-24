@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<decorators defaultdir="/WEB-INF/decorators">
+	
+	<!--For JBOSS & Wild Fly Server Start-->
+	
+	<!-- <decorator name="default" page="defaultlayout.jsp">
+		<pattern>/**</pattern>
+	</decorator> -->
+	
+	<!--For JBOSS & Wild Fly Server End-->
+	
+	<decorator name="landingpage" page="loginlayout.jsp">
+		<pattern>/</pattern>
+	</decorator>
+	
+	<decorator name="landingpage" page="loginlayout.jsp">
+		<pattern>/landingpage</pattern>
+	</decorator>
+	
+	<decorator name="index" page="loginlayout.jsp">
+		<pattern>/index</pattern>
+	</decorator>
+	
+	<decorator name="login" page="loginlayout.jsp">
+		<pattern>/loginPage</pattern>
+	</decorator>
+	
+	<decorator name="loginpage" page="loginlayout.jsp">
+		<pattern>/login</pattern>
+	</decorator>
+	
+	<decorator name="cashcounter" page="loginlayout.jsp">
+		<pattern>/cashCounterLogin</pattern>
+	</decorator>
+	<decorator name="cashCounterPayments" page="cashcounterlayout.jsp">
+		<pattern>/cashCounterPayments</pattern>
+	</decorator>
+	<decorator name="cashCounterDayClose" page="cashcounterlayout.jsp">
+		<pattern>/cashCounterDayClose</pattern>
+	</decorator>
+	<decorator name="cancelReceipt" page="cashcounterlayout.jsp">
+		<pattern>/cancelReceipt</pattern>
+	</decorator>
+	<decorator name="dayClosureReport" page="cashcounterlayout.jsp">
+		<pattern>/dayClosureReport</pattern>
+	</decorator>
+	<decorator name="duplicateReceipt" page="cashcounterlayout.jsp">
+		<pattern>/duplicateReceipt</pattern>
+	</decorator>
+	
+	<decorator name="NewConnectionCounter" page="cashcounterlayout.jsp">
+		<pattern>/newConnectionCounter</pattern>
+	</decorator>
+	
+	<decorator name="cashCounterCustomerHistory" page="cashcounterlayout.jsp">
+		<pattern>/cashCounterCustomerHistory</pattern>
+	</decorator>
+	
+	<decorator name="loginFailure" page="loginlayout.jsp">
+		<pattern>/loginFailure</pattern>
+	</decorator>
+	
+	<decorator name="logout" page="loginlayout.jsp">
+		<pattern>/logout</pattern>
+	</decorator>
+	
+	
+	<decorator name="default" page="defaultlayout.jsp">
+		<pattern>/**</pattern>
+	</decorator>
+	
+	
+	<!--For JBOSS & Wild Fly Server Start-->
+	
+	<!--  <excludes>
+        <pattern>/loginPage</pattern>
+        <pattern>/login</pattern>
+        <pattern>/loginFailure</pattern>
+        <pattern>/logout</pattern>
+     </excludes> -->
+	
+	<!--For JBOSS & Wild Fly Server End-->
+	
+	
+</decorators>
+

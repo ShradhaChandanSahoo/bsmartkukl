@@ -1,0 +1,854 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+	<!-- xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0"> -->
+	<!-- RESOURCE_LOCAL - -->
+
+	<persistence-unit name="defaultPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>		
+		
+		<class>com.bcits.bsmartwater.model.EmployeeEntity</class>
+		<class>com.bcits.bsmartwater.model.User</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRole</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		
+		
+		<class>com.bcits.bsmartwater.model.ApplicationSettingsEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.MiscellaneousPayment</class>
+		<class>com.bcits.bsmartwater.model.HolidayMaster</class>
+		<class>com.bcits.bsmartwater.model.NC_MasterSync</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="jboss.as.jpa.providerModule" value="hibernate3-bundled"/> -->
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="KUKL_BSMART"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="KUKL_BSMART" />
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />	 
+  	    	
+  	    			
+		</properties>
+	</persistence-unit> 
+	<persistence-unit name="TRIPUR_1115" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>	
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>	
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/>
+			
+			<property name="hibernate.default_schema" value="TRIPUR_1115"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="TRIPUR_1115"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="BANESH_1112" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+	<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/>
+			
+			<property name="hibernate.default_schema" value="BANESH_1112"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="BANESH_1112"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    		 
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="TESTLOC_2222" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="TESTLOC_2222"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="TESTLOC_2222"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	 
+		</properties>
+	</persistence-unit>
+	
+	
+	<persistence-unit name="LALITPUR_1118" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="LALITPUR_1118"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="LALITPUR_1118"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	
+		</properties>
+	</persistence-unit>
+	
+	
+	
+	<persistence-unit name="BHAKTAPUR_1116" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="BHAKTAPUR_1116"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="BHAKTAPUR_1116"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	 
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="CHHETRA_1114" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="CHHETRA_1114"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="CHHETRA_1114"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	
+		</properties>
+	</persistence-unit>
+	
+	
+	<persistence-unit name="MAHAR_1111" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+		    <property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="MAHAR_1111"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="MAHAR_1111"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	  
+		</properties>
+	</persistence-unit>
+	
+	
+	<persistence-unit name="THIMI_1117" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			
+			<property name="hibernate.default_schema" value="THIMI_1117"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="THIMI_1117"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	  
+		</properties>
+	</persistence-unit>
+	
+	
+	<persistence-unit name="KIRTIPUR_1119" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			<property name="hibernate.default_schema" value="KIRTIPUR_1119"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="KIRTIPUR_1119"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	 
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="MAHAN_1110" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/> 
+			
+			
+			<property name="hibernate.default_schema" value="MAHAN_1110"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="MAHAN_1110"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	 
+		</properties>
+	</persistence-unit>
+	
+	
+	
+	<persistence-unit name="KAMALADI_1113" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		<class>com.bcits.bsmartwater.model.SewageChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserTypeEntity</class>
+		<class>com.bcits.bsmartwater.model.UserRolesEntity</class>
+		<class>com.bcits.bsmartwater.model.UserMaster</class>
+		<class>com.bcits.bsmartwater.model.AllConstrants</class>
+		<class>com.bcits.bsmartwater.model.UserDesignationEntity</class>
+		<class>com.bcits.bsmartwater.model.ModuleMaster</class>	
+		<class>com.bcits.bsmartwater.model.ConsumerMaster</class>
+		<class>com.bcits.bsmartwater.model.BillingLedgerEntity</class>
+		<class>com.bcits.bsmartwater.model.BillApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.TariffRateMaster</class>
+		<class>com.bcits.bsmartwater.model.PaymentEntity</class>
+		<class>com.bcits.bsmartwater.model.ConsumerMasterApproval</class>	
+		<class>com.bcits.bsmartwater.model.CashMasterConfig</class>	
+		<class>com.bcits.bsmartwater.model.BankDetailsEntity</class>	
+		<class>com.bcits.bsmartwater.model.BranchDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterReaderEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.MeterChangeApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.CashCounterDayClose</class>
+		<class>com.bcits.bsmartwater.model.DisConnectionListEntity</class>
+		<class>com.bcits.bsmartwater.model.WardDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.CounterDetails</class>
+		<class>com.bcits.bsmartwater.model.ObservationEntity</class>
+		<class>com.bcits.bsmartwater.model.MuncipalityDetailsEntity</class>
+		<class>com.bcits.bsmartwater.model.Penalty_Rebate</class>
+		<class>com.bcits.bsmartwater.model.DailyCashCounterReport</class>
+		<class>com.bcits.bsmartwater.model.CloseMonthEnd</class>
+		<class>com.bcits.bsmartwater.model.ConTypeChangeEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyAdjustment</class>
+		<class>com.bcits.bsmartwater.model.BoardInstallment</class>
+		<class>com.bcits.bsmartwater.model.AdjustmentVoucher</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearBalance</class>
+		<class>com.bcits.bsmartwater.model.OwnerShipChange</class>
+		<class>com.bcits.bsmartwater.model.UserLog</class>
+		<class>com.bcits.bsmartwater.model.WrongPosting</class>
+		<class>com.bcits.bsmartwater.model.CashAdjApproveEntity</class>
+		<class>com.bcits.bsmartwater.model.BillPenaltyCorrectionAjdutment</class>
+		<class>com.bcits.bsmartwater.model.WardToMrEntity</class>
+		<class>com.bcits.bsmartwater.model.DoubleLedgerValidation</class>
+		<class>com.bcits.bsmartwater.model.FiscalYearAdvanceBalance</class>
+		<class>com.bcits.bsmartwater.model.SqlEditorExecutedQry</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_query_cache" value="false"/>
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/>
+			
+			
+			<property name="hibernate.default_schema" value="KAMALADI_1113"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+   			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.20.2:1521:ORCL"/>
+   			<property name="javax.persistence.jdbc.user" value="KAMALADI_1113"/>
+  	    	<property name="javax.persistence.jdbc.password" value="sticb_BcitsK4" />
+  	    	 
+		</properties>
+	</persistence-unit>
+	
+	
+	  
+</persistence>
